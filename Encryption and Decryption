@@ -1,0 +1,53 @@
+// Encryption and Decyption Program
+
+#include <iostream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int i, x;
+    char str[100];
+   
+
+    // Enter message you want to Encrypt or Decrypt 
+    // Keep this just incase
+    cout << "------------------------------------------Encryption and Decryption Software------------------------------------------\n";
+    cout << "This program you can decrypt or Encrypt your message\n";
+
+    cout << "Please enter your message:\n";
+    cin >> str;
+
+ 
+
+    // Choice to Encrypt or Decrypt message
+    cout << "\nPlease choose following options:\n";
+    cout << "1 = Encrypt my message.\n";
+    cout << "2 = Decrypt my message.\n";
+    cin >> x;
+
+         //using switch case statements
+    switch (x)
+    {
+        //first case for encrypting a Message
+    case 1:
+        for (i = 0; (i < 100 && str[i] != '\0'); i++)
+            str[i] = str[i] + 2; //the key for encryption is 3 that is added to ASCII value
+
+        cout << "\nEncrypted Message: " << str << endl;
+        break;
+
+        //second case for decrypting a Message
+    case 2:
+        for (i = 0; (i < 100 && str[i] != '\0'); i++)
+            str[i] = str[i] - 2; //the key for encryption is 3 that is subtracted to ASCII value
+
+        cout << "\nDecrypted Message: " << str << endl;
+        break;
+
+    default:
+        cout << "\nInvalid Input !!!\n";
+    }
+    return 0;
+}
